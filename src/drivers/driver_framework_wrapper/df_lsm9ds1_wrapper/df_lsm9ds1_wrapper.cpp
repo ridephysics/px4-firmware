@@ -716,7 +716,7 @@ int DfLsm9ds1Wrapper::_publish(struct imu_sensor_data &data)
 		if (threshold_reached && due_to_report) {
 			mavlink_log_critical(&_mavlink_log_pub,
 					     "High accelerations, range exceeded %llu times",
-					     data.accel_range_hit_counter);
+					     (unsigned long long)data.accel_range_hit_counter);
 
 			_last_accel_range_hit_time = hrt_absolute_time();
 			_last_accel_range_hit_count = data.accel_range_hit_counter;

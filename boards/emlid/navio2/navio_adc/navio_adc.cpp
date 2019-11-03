@@ -313,7 +313,7 @@ int navio_adc_main(int argc, char *argv[])
 			return ret;
 
 		} else if (ret != sizeof(adc_msgs)) {
-			PX4_ERR("incomplete read: %d expected %d", ret, sizeof(adc_msgs));
+			PX4_ERR("incomplete read: %d expected %zu", ret, sizeof(adc_msgs));
 			return ret;
 		}
 

@@ -536,7 +536,7 @@ test(const char *port)
 	ssize_t num_bytes = ::write(fd, request_reading_msg, sizeof(request_reading_msg));
 
 	if (num_bytes != sizeof(request_reading_msg)) {
-		PX4_INFO("serial port write failed: %i, errno: %i", num_bytes, errno);
+		PX4_INFO("serial port write failed: %zd, errno: %i", num_bytes, errno);
 		return PX4_ERROR;
 	}
 

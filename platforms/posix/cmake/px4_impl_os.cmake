@@ -269,6 +269,17 @@ function(px4_os_add_flags)
 			-D__DF_RPI
 		)
 
+	elseif (("${PX4_BOARD}" MATCHES "ridephysics"))
+
+		#TODO: move to board support
+
+		add_definitions(
+			-D__PX4_LINUX
+
+			# For DriverFramework
+			-D__DF_LINUX
+		)
+
 	elseif ("${PX4_BOARD}" MATCHES "bebop")
 
 		#TODO: move to board support
